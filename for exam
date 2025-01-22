@@ -1,0 +1,18 @@
+create database	SQL_class_9 
+create table t1 (id int identity (2,), name varchar(20))
+insert into t1 values ('John')
+select * from t1
+isnull -- null replace
+coalapse -- null bomagan qimat
+wildcard -- %, _, [], ^,[-] 
+any/all -- any bittasini chiqaardi all hammasini chiqaradi
+union/ union all 
+--union 123456 unique oladi
+-- union all 12343456 dublikatniyam oladi
+
+case / iff 
+case selectda ishlatsa boladi
+iff selectda ishlatib bomidi
+
+patindexda wildcardlani ishlatsa boladi topishga 
+catindexda wildcardlani ishlatmi ozini topsa boladi
