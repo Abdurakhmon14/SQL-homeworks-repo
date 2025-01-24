@@ -1,0 +1,13 @@
+Homework: give exact time of your age ( how many years you lived,month?,day?)
+
+
+Declare @age datetime - '1996-08-14'
+select case when month(getdate()) >- Month(@age) and
+                day(getdate()) >- day (@age)
+        then year(getdate()) - year(@age) 
+          else year(getdate()) - year(@age) - 1 end as [year],
+      (month(getdate()) - month(@age) + 12) %12 as month,
+      Case when Day(getdate()) >- day(@age)
+            then day(getdate()) - day(@age)
+            else day(@age) - day(getdate())
+      end as [day]
