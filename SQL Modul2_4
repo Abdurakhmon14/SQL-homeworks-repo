@@ -1,0 +1,9 @@
+Find weekday names using recursive cte
+
+
+; with cte as 
+ ( 
+    select 0 as n, Datename(Weekday, 0) as weekday
+    union all
+    select n + 1, datename(Weekday, N+1) from cte)
+Select top 7 * from cte
