@@ -1,1 +1,20 @@
+Create a function which will reverse string (without reverse)
 
+Create fgunction udf_reverse (@originalString varchar (50))
+returns varchar (50) 
+as
+begin
+  declare @reverseName varchar (20) = ' '
+  ;with c te as 
+ ( 
+    Select 1 as n, Left (originalString, 1)as 1
+      union all
+    Select n+1, Substring (@originalString , n+1,1) From cte where n< len (@originalString)
+  )
+
+   Select @reverseName = @reverseName +1 From cte
+     order by n desc
+  return @reverseName
+  end
+
+   select dbo.udf_reverse ('Abdurahmon') 
