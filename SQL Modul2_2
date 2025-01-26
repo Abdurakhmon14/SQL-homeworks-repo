@@ -2,3 +2,25 @@
 2 Capitalize last latters
 3 Find largest string Stringdata1
 4 Split names to first name and lansname
+
+
+1.Select Upper (substring (name,1,1)),
+       Lower (substring (name, 2,len(name)-1)) 
+  From employee
+
+2.Select lower (substring(name,1,len(name)-1)) 
+    and upper (supstring (name, len (name),1)) 
+  from employees
+
+3.Find the longest srtring Stringdata1 
+
+  Select * from Stringdata1 
+     where len (original_string)= 
+            (select max(len(original_string))
+  From stringdata1
+
+4. 
+   Select Id, Charindex (',',name)
+    Substring (name,1,charindex(',',name)-1) as first_name,
+    Substring (name,charindex(',',name)+1,len(name)) as last_name
+   From TestMultipleColumns.
