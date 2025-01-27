@@ -37,7 +37,7 @@ group by customer_id
 having count(distinct product_key) = (select count(product_key) from Product)
 
 
-4.
+4.Substring properly names
 
 Select user_id, concat (upper(substring(name, 1,1)), Lower (substring(name,2,len(name))))
 from Users
