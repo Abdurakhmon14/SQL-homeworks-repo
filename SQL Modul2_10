@@ -12,3 +12,34 @@ Select sell_date,
         STRING_AGG(product, ',') as products
         From cte
         group by sell_date
+
+
+2. Har bir employee bir kunda necci vaqt officeda bolganligini hisoblash kerak
+
+output:
+
+event_day                emp_id                total_time
+2020-11-28                1                        173
+2020-12-03                1                         41
+2020-11-28                2                         30
+2020-12-09                2                         27
+
+
+select event_day, emp_ID, sum (out_time - in_time) as total_time
+from Employees
+group by event_day, emp_id
+
+
+3.
+
+Select customer_id, count(distinct product_key) From Customer
+group by customer_id
+having count(distinct product_key) = (select count(product_key) from Product)
+
+
+4.
+
+Select user_id, concat (upper(substring(name, 1,1)), Lower (substring(name,2,len(name))))
+from Users
+
+
